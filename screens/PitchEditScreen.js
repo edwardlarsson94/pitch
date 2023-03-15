@@ -19,12 +19,13 @@ const PitchEditScreen = () => {
     loadPitch();
   }, []);
 
-  const editPitch = async (title, description) => {
-    if (title && description) {
+  const editPitch = async (title, description, problem) => {
+    if (title && description && problem) {
       const updatedPitch = {
         ...pitch,
         title,
         description,
+        problem,
       };
 
       await pitchStorage.updatePitch(updatedPitch);

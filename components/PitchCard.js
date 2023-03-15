@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet,TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 
@@ -17,6 +17,7 @@ const PitchCard = ({ pitch }) => {
          </TouchableOpacity>
       </View>
       <Text style={styles.description}>{pitch.description}</Text>
+      <Text style={styles.description}>{pitch.problem}</Text>
     </View>
   );
 };
@@ -42,10 +43,11 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 10,
+    color: '#0F4C5C',
   },
   description: {
     fontSize: 14,
-    color: '#777',
+    color: '#1E2A47',
   },
 });
 

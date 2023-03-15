@@ -1,7 +1,8 @@
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React, { useState, useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import pitchStorage from '../storage/pitchStorage';
+import PitchView from '../components/PitchView';
 
 
 export default function PitchViewScreen() {
@@ -20,7 +21,7 @@ export default function PitchViewScreen() {
 
   return (
     <View>
-      <Text>{pitches.title}</Text>
+      <PitchView pitch = {pitches}/>
     </View>
   )
 }

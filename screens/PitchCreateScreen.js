@@ -7,12 +7,13 @@ import pitchStorage from '../storage/pitchStorage';
 const PitchCreateScreen = () => {
   const navigation = useNavigation();
 
-  const createPitch = async (title, description) => {
-    if (title && description) {
+  const createPitch = async (title, description, problem) => {
+    if (title && description && problem) {
       const newPitch = {
         id: Date.now().toString(),
         title,
         description,
+        problem,
       };
 
       await pitchStorage.addPitch(newPitch);

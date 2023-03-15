@@ -4,6 +4,8 @@ import { View, TextInput, Button, StyleSheet } from 'react-native';
 const PitchForm = ({ onSubmit, initialValues }) => {
   const [title, setTitle] = useState(initialValues.title);
   const [description, setDescription] = useState(initialValues.description);
+  const [problem, setProblem] = useState(initialValues.problem);
+
 
   return (
     <View style={styles.container}>
@@ -20,9 +22,16 @@ const PitchForm = ({ onSubmit, initialValues }) => {
         onChangeText={setDescription}
         multiline
       />
+      <TextInput
+        style={styles.input}
+        placeholder="Problema"
+        value={problem}
+        onChangeText={setProblem}
+        multiline
+      />
       <Button
         title="Guardar"
-        onPress={() => onSubmit(title, description)}
+        onPress={() => onSubmit(title, description, problem)}
       />
     </View>
   );
@@ -32,6 +41,7 @@ PitchForm.defaultProps = {
   initialValues: {
     title: '',
     description: '',
+    problem: '',
   },
 };
 
