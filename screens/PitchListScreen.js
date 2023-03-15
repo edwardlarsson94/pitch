@@ -22,7 +22,7 @@ const PitchListScreen = () => {
   useFocusEffect(
     useCallback(() => {
       loadPitches();
-      return () => {}; // Cleanup function
+      return () => {};
     }, []),
   );
 
@@ -32,7 +32,7 @@ const PitchListScreen = () => {
         data={pitches}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() => navigation.navigate('PitchEdit', { pitch: item })}
+            onPress={() => navigation.navigate('PitchView', { pitch: item })}
           >
             <PitchCard pitch={item} />
           </TouchableOpacity>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   addButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: '#20C9B9',
     position: 'absolute',
     right: 30,
     bottom: 30,
