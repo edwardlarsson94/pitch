@@ -17,7 +17,6 @@ const PitchCard = ({ pitch }) => {
          </TouchableOpacity>
       </View>
       <Text style={styles.description}>{pitch.description}</Text>
-      <Text style={styles.description}>{pitch.problem}</Text>
     </View>
   );
 };

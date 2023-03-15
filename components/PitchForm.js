@@ -5,7 +5,7 @@ const PitchForm = ({ onSubmit, initialValues }) => {
   const [title, setTitle] = useState(initialValues.title);
   const [description, setDescription] = useState(initialValues.description);
   const [problem, setProblem] = useState(initialValues.problem);
-
+  const [solution, setSolution] = useState(initialValues.solution);
 
   return (
     <View style={styles.container}>
@@ -29,9 +29,16 @@ const PitchForm = ({ onSubmit, initialValues }) => {
         onChangeText={setProblem}
         multiline
       />
+      <TextInput
+        style={styles.input}
+        placeholder="Solution"
+        value={solution}
+        onChangeText={setSolution}
+        multiline
+      />
       <Button
         title="Guardar"
-        onPress={() => onSubmit(title, description, problem)}
+        onPress={() => onSubmit(title, description, problem, solution)}
       />
     </View>
   );
@@ -42,6 +49,7 @@ PitchForm.defaultProps = {
     title: '',
     description: '',
     problem: '',
+    solution: '',
   },
 };
 

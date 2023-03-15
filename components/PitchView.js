@@ -9,13 +9,10 @@ export default function PitchView({ pitch }) {
       <Text style={styles.description}>{pitch.description}</Text>
 
       <Text style={styles.title}>Problem</Text>
-      <Text style={styles.subTitle}>{pitch.title}</Text>
-      <Text style={styles.description}>{pitch.description}</Text>
-      <Text style={styles.description}>{pitch.description}</Text>
+      <Text style={styles.description}>{pitch.problem}</Text>
 
       <Text style={styles.title}>Solution</Text>
-      <Text style={styles.subTitle}>{pitch.title}</Text>
-      <Text style={styles.description}>{pitch.description}</Text>
+      <Text style={styles.description}>{pitch.solution}</Text>
 
       <Text style={styles.title}>Market Validation</Text>
       <Text style={styles.subTitle}>{pitch.title}</Text>
@@ -67,7 +64,6 @@ const styles = StyleSheet.create({
   subTitle: {
     fontSize: 20,
     fontWeight: "bold",
-    marginBottom: 10,
     color: "#0F4C5C",
     width: "100%",
     textAlign: "center",
@@ -75,8 +71,7 @@ const styles = StyleSheet.create({
   description: {
     fontSize: 16,
     color: "#1E2A47",
-    marginBottom: 10,
     width: "100%",
-    textAlign: "center",
+    textAlign: "left",
   },
 });
